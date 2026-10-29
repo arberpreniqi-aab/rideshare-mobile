@@ -19,12 +19,12 @@ Te detajet e udhëtimit ID 3 (Lipjan) s'ka vende të lira, prandaj pres që të 
 2. [PLOTËSO] Një problem ose paqartësi tjetër.
 
 ## Korrigjimi
-Skedari: [PLOTËSO]
+Skedari: aplikacioni/src/components/KartaUdhetimi.tsx
 [PLOTËSO] Çfarë bën ky skedar, çfarë ndryshove dhe pse?
 
 ## Versionet
 Para: https://github.com/arberpreniqi-aab/rideshare-mobile/commit/bd5fcfd30f9ab0ea1fc919a7bc255b1f397e3ebb
-Pas: [PLOTËSO]
+Pas: https://github.com/arberpreniqi-aab/rideshare-mobile/commit/2124c34a78b17caac7fea086dfb439f0ab71803a
 
 ## Provat që bëra
 ### Prova 1
