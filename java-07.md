@@ -20,7 +20,7 @@ Te detajet e udhëtimit ID 3 (Lipjan) s'ka vende të lira, prandaj pres që të 
 
 ## Korrigjimi
 Skedari: aplikacioni/src/components/KartaUdhetimi.tsx
-[PLOTËSO] Çfarë bën ky skedar, çfarë ndryshove dhe pse?
+Ky skedar vizaton një kartë udhëtimi në listë; faqja kryesore e përdor një herë për secilin udhëtim. Pas rreshtit me orën dhe vendet shtova `{udhetim.vende === 0 && <p>Ska vende të lira</p>}`: kur udhëtimi ka 0 vende shfaqet teksti "Ska vende të lira", ndërsa kur ka 1 ose më shumë vende kushti është i rremë dhe nuk shfaqet asgjë. E shtova që udhëtari ta kuptojë menjëherë nga lista që udhëtimi është plot, pa pasur nevojë të hapë detajet.
 
 ## Versionet
 Para: https://github.com/arberpreniqi-aab/rideshare-mobile/commit/bd5fcfd30f9ab0ea1fc919a7bc255b1f397e3ebb
@@ -46,4 +46,4 @@ Vëzhgimi: Karta e Fushë Kosovës tregoi "Ora: 08:15 · Vende të lira: 0" dhe 
 Nuk e kam demonstruar ende me një koleg. Hyrjen e ndryshova vetë te Prova 3 (ID 2 me 0 vende): parashikova që të kishte vende të lira, por doli "Ska vende të lira", sepse kushti varet vetëm nga numri i vendeve. Do ta demonstroj në takimin e radhës.
 
 ## Ndihma nga AI
-Përdora Claude (asistent AI) për: nisjen e serverit, gjenerimin e rastit dhe ruajtjen e modelit të raportit, sugjerimin se ku të kërkoj probleme dhe në cilin skedar, sugjerimin e formës së kushtit `{udhetim.vende === 0 && <p>…</p>}` dhe rregullimin e një gabimi kur kopjova edhe numrat e rreshtave. Claude bëri gjithashtu Commit/Push, ndryshoi përkohësisht vendet e ID 2 në Neon për Prova 3 dhe më ndihmoi t'i shkruaj provat nga vëzhgimet e mia. Parashikimet dhe tekstin "Ska vende të lira" i shkrova vetë; rreshtin në KartaUdhetimi.tsx e shtova vetë në VS Code dhe e provova në shfletues.
+Përdora Claude (asistent AI) për: nisjen e serverit, gjenerimin e rastit dhe ruajtjen e modelit të raportit, sugjerimin se ku të kërkoj probleme dhe në cilin skedar, sugjerimin e formës së kushtit `{udhetim.vende === 0 && <p>…</p>}` dhe rregullimin e një gabimi kur kopjova edhe numrat e rreshtave. Shpjegimin e korrigjimit te raporti e formuloi Claude sipas kërkesës sime; e lexova dhe e kuptoj. Claude bëri gjithashtu Commit/Push, ndryshoi përkohësisht vendet e ID 2 në Neon për Prova 3 dhe më ndihmoi t'i shkruaj provat nga vëzhgimet e mia. Parashikimet dhe tekstin "Ska vende të lira" i shkrova vetë; rreshtin në KartaUdhetimi.tsx e shtova vetë në VS Code dhe e provova në shfletues.
