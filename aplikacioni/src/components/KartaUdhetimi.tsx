@@ -11,6 +11,7 @@ export function KartaUdhetimi({ udhetim }: { udhetim: Udhetim }) {
       <p>
         Ora: {udhetim.ora} · Vende të lira: {udhetim.vende}
       </p>
+      {udhetim.vende === 0 && <p>Ska vende të lira</p>}
 
       <Link className="action" href={`/udhetimi/${udhetim.id}`}>
         Shiko detajet
