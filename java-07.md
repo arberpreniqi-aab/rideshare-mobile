@@ -23,7 +23,7 @@ Skedari: [PLOTËSO]
 [PLOTËSO] Çfarë bën ky skedar, çfarë ndryshove dhe pse?
 
 ## Versionet
-Para: [PLOTËSO]
+Para: https://github.com/arberpreniqi-aab/rideshare-mobile/commit/bd5fcfd30f9ab0ea1fc919a7bc255b1f397e3ebb
 Pas: [PLOTËSO]
 
 ## Provat që bëra
