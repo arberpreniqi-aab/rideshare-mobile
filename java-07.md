@@ -15,8 +15,8 @@ Të dhënat fiktive të rastit: Pejë → AAB, 10:15, 1 vende. Ora për provën 
 Te detajet e udhëtimit ID 3 (Lipjan) s'ka vende të lira, prandaj pres që të dalë mesazhi që nuk ka vende të lira.
 
 ## Dy probleme
-1. [PLOTËSO] Çfarë pe dhe me cilët hapa e përsërite?
-2. [PLOTËSO] Një problem ose paqartësi tjetër.
+1. Te Lipjani nuk kishte vende të lira, por karta në listë dukej njësoj si të tjerat (i njëjti buton "Shiko detajet"); vetëm numri "0" e tregonte. E përsërita duke hapur localhost:3000 dhe duke krahasuar tri kartat.
+2. Kur hapa direkt /udhetimi/3/kerkesa doli vetëm titulli "Nuk ka vende të lira." dhe lidhja "← Kthehu te detajet", pa shpjegim dhe pa lidhje te lista.
 
 ## Korrigjimi
 Skedari: aplikacioni/src/components/KartaUdhetimi.tsx
@@ -28,22 +28,22 @@ Pas: https://github.com/arberpreniqi-aab/rideshare-mobile/commit/2124c34a78b17ca
 
 ## Provat që bëra
 ### Prova 1
-Hapat: [PLOTËSO]
-Pritshmëria: [PLOTËSO]
-Vëzhgimi: [PLOTËSO]
+Hapat: Hapa localhost:3000, te karta Lipjan – AAB (ID 3) klikova "Shiko detajet", pastaj hapa direkt /udhetimi/3/kerkesa.
+Pritshmëria: Te detajet e ID 3 të dalë që nuk ka vende të lira.
+Vëzhgimi: Te lista karta e Lipjanit dukej njësoj si të tjerat, vetëm me "Vende të lira: 0". Te detajet: Ora 07:45, Vendtakimi: Qendra e qytetit, Vende të lira: 0 dhe butoni gri "Nuk ka vende të lira" i çaktivizuar. Te /udhetimi/3/kerkesa doli vetëm titulli "Nuk ka vende të lira." dhe lidhja "← Kthehu te detajet". Asnjë rezervim nuk u konfirmua; kërkesa mbetet simulim.
 
 ### Prova 2
-Hapat: [PLOTËSO]
-Pritshmëria: [PLOTËSO]
-Vëzhgimi: [PLOTËSO]
+Hapat: Pas ndryshimit në KartaUdhetimi.tsx ruajta skedarin dhe rifreskova localhost:3000.
+Pritshmëria: Te karta e Lipjanit të dalë teksti "Ska vende të lira", te Prishtina dhe Fushë Kosova jo.
+Vëzhgimi: Te karta e Lipjanit doli "Ska vende të lira" nën "Ora: 07:45 · Vende të lira: 0". Prishtina (2 vende) dhe Fushë Kosova (1 vend) nuk e kishin tekstin.
 
 ### Prova 3
-Hapat: [PLOTËSO]
-Pritshmëria: [PLOTËSO]
-Vëzhgimi: [PLOTËSO]
+Hapat: Ndryshova përkohësisht në Neon vendet e ID 2 (Fushë Kosovë) nga 1 në 0 dhe rifreskova listën. Pastaj i ktheva në 1.
+Pritshmëria: Prisja që Fushë Kosova të kishte ende vende të lira.
+Vëzhgimi: Karta e Fushë Kosovës tregoi "Ora: 08:15 · Vende të lira: 0" dhe tekstin "Ska vende të lira". Parashikimi im doli gabim: kushti kontrollon numrin e vendeve nga databaza, prandaj teksti del për çdo udhëtim që ka 0 vende, jo vetëm për Lipjanin.
 
 ## Ndryshimi i ri
-[PLOTËSO] Hyrja që ndryshoi kolegu, çfarë parashikove dhe pse doli ai rezultat. Nëse nuk e ke demonstruar ende, shkruaje qartë.
+Nuk e kam demonstruar ende me një koleg. Hyrjen e ndryshova vetë te Prova 3 (ID 2 me 0 vende): parashikova që të kishte vende të lira, por doli "Ska vende të lira", sepse kushti varet vetëm nga numri i vendeve. Do ta demonstroj në takimin e radhës.
 
 ## Ndihma nga AI
-[PLOTËSO] Shëno ndihmën dhe çfarë verifikove vetë, ose: Nuk përdora AI.
+Përdora Claude (asistent AI) për: nisjen e serverit, gjenerimin e rastit dhe ruajtjen e modelit të raportit, sugjerimin se ku të kërkoj probleme dhe në cilin skedar, sugjerimin e formës së kushtit `{udhetim.vende === 0 && <p>…</p>}` dhe rregullimin e një gabimi kur kopjova edhe numrat e rreshtave. Claude bëri gjithashtu Commit/Push, ndryshoi përkohësisht vendet e ID 2 në Neon për Prova 3 dhe më ndihmoi t'i shkruaj provat nga vëzhgimet e mia. Parashikimet dhe tekstin "Ska vende të lira" i shkrova vetë; rreshtin në KartaUdhetimi.tsx e shtova vetë në VS Code dhe e provova në shfletues.
