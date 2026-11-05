@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Lejon telefonin në të njëjtin Wi-Fi gjatë zhvillimit (npm run dev).
+  allowedDevOrigins: ["10.150.23.146"],
 };
 
 export default nextConfig;
